@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark mode javascript plugin</title>
+    <meta name="description" content="" />
+    <meta name="Keywords" content="dark mode, night mode, javascript plugin" />
+    <link rel="stylesheet" href="scss/demo-styles.css" />
+    <link rel="stylesheet" href="dist/theme-color-switch.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+    <style>
+        .mario {
+            position: absolute;
+            width: 71px;
+            height: 72px;
+            background: url('https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/mariowalking/result.png') left center;
+            /* top: -70px; */
+            left: 0px;
+            -webkit-animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
+            animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- As a link -->
+    <nav class="navbar navbar-light bg-light">
+        <!-- <div class="mario"></div> -->
+        <a class="navbar-brand ml-4" href="#">Navbar</a>
+    </nav>
+    <!-- <div class="container" class="theme-color-switch" data-text-on="turn OFF dark mode" data-text-off="turn ON dark mode"></div> -->
+    <div class="row m-3">
+        <div class="col-md-2 m-2">
+            <div class="card" ">
+                <!-- <img src="... " class="card-img-top " alt="... "> -->
+                <div class="card-body ">
+                    <h5 class="card-title ">Card title</h5>
+                    <p class="card-text ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="# " class="btn btn-primary ">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 ">
+            <div class="border border-secondary rounded m-2 " id="post1 ">
+            </div>
+        </div>
+        <div id="myData "></div>
+        <script>
+            fetch('table.json')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    appendData(data);
+                })
+                .catch(function (err) {
+                    console.log('error: ' + err);
+                });
+            function appendData(data) {
+                var mainContainer = document.getElementById("myData ");
+                for (var i = 0; i < data.length; i++) {
+                    var div = document.createElement("div");
+                    div.innerHTML = data[i].title;
+                    mainContainer.appendChild(div);
+                }
+            }
+        </script>
+        
+    </div>
+    </div>
+</body>
+<!-- <script src="dist/theme-color-switch.js "></script>
+<script>
+    new ThemeColorSwitch(".demo-wrapper ");
+</script> -->
+<!-- 
+
+                </script> -->
+
+</html>
