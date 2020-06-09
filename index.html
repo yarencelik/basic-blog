@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dark mode javascript plugin</title>
+    <title>Basic Blog Template</title>
     <meta name="description" content="" />
     <meta name="Keywords" content="dark mode, night mode, javascript plugin" />
     <link rel="stylesheet" href="scss/demo-styles.css" />
@@ -47,13 +47,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8 ">
-            <div class="border border-secondary rounded m-2 " id="post1 ">
-            </div>
+        <div class="col-md-8 " id="postContainer">
+            
         </div>
-        <div id="myData "></div>
+        <!-- <div id="myData "></div> -->
         <script>
-            fetch('table.json')
+            fetch('https://raw.githubusercontent.com/yarencelik/basic-blog/master/table.json')
                 .then(function (response) {
                     return response.json();
                 })
@@ -63,12 +62,18 @@
                 .catch(function (err) {
                     console.log('error: ' + err);
                 });
+            
+            
+
             function appendData(data) {
-                var mainContainer = document.getElementById("myData ");
-                for (var i = 0; i < data.length; i++) {
+                var Container = document.getElementById("postContainer");
+                for(let j=0;j<data.length;j++){
                     var div = document.createElement("div");
-                    div.innerHTML = data[i].title;
-                    mainContainer.appendChild(div);
+                    div.className="border border-secondary rounded m-2";
+                    div.id="post"+j;
+                    console.log(div.id);
+                    div.innerHTML+= data[j].title + "<br>" + data[j].publishedAt + "<br>" + data[j].content;
+                    Container.appendChild(div);
                 }
             }
         </script>
