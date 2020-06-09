@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-
+// Veritabanındaki verileri json dosyasına dönüştürme.
 connection.query('SELECT * FROM post ', function(err, results, fields) {
     if (err) throw err;
 
@@ -21,3 +21,4 @@ connection.query('SELECT * FROM post ', function(err, results, fields) {
 
     connection.end();
 });
+//Burada dönüştürdüğüm json verisini getirmek için index.html de bu dosyanın online versiyonunu(https://raw.githubusercontent.com/yarencelik/basic-blog/master/table.json) kullandım.
