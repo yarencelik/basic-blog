@@ -1,1 +1,11 @@
-{"menu": [{"name": "French Fries","price": 3.99,"description": "Crispy and golden french fries.","category": "snack"}]}
+{"menu": {
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"value": "New", "onclick": "CreateNewDoc()"},
+      {"value": "Open", "onclick": "OpenDoc()"},
+      {"value": "Close", "onclick": "CloseDoc()"}
+    ]
+  }
+}}
