@@ -1,8 +1,8 @@
-"menu" :[
-      {
-        "name": "French Fries",
-        "price": 3.99,
-        "description": "Crispy and golden french fries.",
-        "category": "snack"
-      }
+"menu": [
+  {
+    "name": "French Fries",
+    "price": 3.99,
+    "description": "Crispy and golden french fries.",
+    "category": "snack"
+  }
 ]
